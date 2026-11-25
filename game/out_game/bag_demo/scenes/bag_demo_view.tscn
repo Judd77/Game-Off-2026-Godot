@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://6ugnnhsi2ypy"]
+
+[ext_resource type="Script" uid="uid://b51o17hhdqi7n" path="res://game/out_game/bag_demo/scripts/bag_demo_component.gd" id="1_4tvhv"]
+[ext_resource type="PackedScene" path="res://game/out_game/bag_demo/scenes/bag_cell.tscn" id="2_r3lq2"]
+[ext_resource type="Theme" path="res://game/shared/themes/demo_text_theme.tres" id="3_theme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m4e2"]
+bg_color = Color(0.13333334, 0.1882353, 0.25882354, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0vd5"]
+bg_color = Color(0.22352941, 0.3137255, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skv8u"]
+bg_color = Color(0.1922353, 0.26980394, 0.3574902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk2im"]
+bg_color = Color(0.3011765, 0.38235295, 0.47411767, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcs7r"]
+bg_color = Color(0.27058825, 0.40784314, 0.5411765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.30980393, 0.42745098, 1)
+
+[node name="BagDemoView" type="Control" unique_id=713152320]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_theme")
+script = ExtResource("1_4tvhv")
+
+[node name="Mask" type="ColorRect" parent="." unique_id=396714821]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.62)
+
+[node name="Panel" type="Panel" parent="." unique_id=1672795452]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -182.0
+offset_right = 237.0
+offset_bottom = 182.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2m4e2")
+
+[node name="Title" type="Label" parent="Panel" unique_id=1857900556]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 12.0
+offset_right = 369.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 25
+text = "背包"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Button" parent="Panel" unique_id=765429964]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = 86.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_e0vd5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_skv8u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fk2im")
+text = "退出"
+
+[node name="Scroll" type="ScrollContainer" parent="Panel" unique_id=1946165530]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 458.0
+offset_bottom = 348.0
+horizontal_scroll_mode = 0
+
+[node name="Grid" type="GridContainer" parent="Panel/Scroll" unique_id=406159849]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="Cell01" parent="Panel/Scroll/Grid" unique_id=1534314329 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell02" parent="Panel/Scroll/Grid" unique_id=1611384258 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell03" parent="Panel/Scroll/Grid" unique_id=969745813 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell04" parent="Panel/Scroll/Grid" unique_id=149613187 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell05" parent="Panel/Scroll/Grid" unique_id=1177979740 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell06" parent="Panel/Scroll/Grid" unique_id=1482659510 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell07" parent="Panel/Scroll/Grid" unique_id=1517907593 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell08" parent="Panel/Scroll/Grid" unique_id=479596677 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell09" parent="Panel/Scroll/Grid" unique_id=2091194498 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell10" parent="Panel/Scroll/Grid" unique_id=1385451831 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell11" parent="Panel/Scroll/Grid" unique_id=1540038200 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell12" parent="Panel/Scroll/Grid" unique_id=806182152 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell13" parent="Panel/Scroll/Grid" unique_id=2140921858 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell14" parent="Panel/Scroll/Grid" unique_id=930887654 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell15" parent="Panel/Scroll/Grid" unique_id=319416152 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell16" parent="Panel/Scroll/Grid" unique_id=616741690 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell17" parent="Panel/Scroll/Grid" unique_id=694956812 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell18" parent="Panel/Scroll/Grid" unique_id=413621483 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell19" parent="Panel/Scroll/Grid" unique_id=1109112872 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell20" parent="Panel/Scroll/Grid" unique_id=886169230 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell21" parent="Panel/Scroll/Grid" unique_id=760395760 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell22" parent="Panel/Scroll/Grid" unique_id=1691841106 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell23" parent="Panel/Scroll/Grid" unique_id=689701842 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell24" parent="Panel/Scroll/Grid" unique_id=1938449889 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell25" parent="Panel/Scroll/Grid" unique_id=1219445889 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell26" parent="Panel/Scroll/Grid" unique_id=928577067 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell27" parent="Panel/Scroll/Grid" unique_id=185033350 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell28" parent="Panel/Scroll/Grid" unique_id=721761269 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell29" parent="Panel/Scroll/Grid" unique_id=842933403 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")
+
+[node name="Cell30" parent="Panel/Scroll/Grid" unique_id=789510858 instance=ExtResource("2_r3lq2")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcs7r")

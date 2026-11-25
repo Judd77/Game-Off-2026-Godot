@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bspugru1jmd37"]
+
+[ext_resource type="Script" path="res://bootstrap/scripts/facade.gd" id="1_facade"]
+
+[node name="Bootstrap" type="Control" unique_id=1238867825]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Poster" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.06666667, 0.08627451, 0.11372549, 1)
+
+[node name="Mark" type="Control" parent="Poster"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.5
+offset_top = -60.0
+offset_right = 10.5
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopLeft" type="ColorRect" parent="Poster/Mark"]
+layout_mode = 0
+offset_right = 9.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.4392157, 0.827451, 0.7647059, 1)
+
+[node name="TopRight" type="ColorRect" parent="Poster/Mark"]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 21.0
+offset_bottom = 9.0
+mouse_filter = 2
+color = Color(0.27450982, 0.35686275, 0.40784314, 1)
+
+[node name="BottomLeft" type="ColorRect" parent="Poster/Mark"]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 9.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.27450982, 0.35686275, 0.40784314, 1)
+
+[node name="BottomRight" type="ColorRect" parent="Poster/Mark"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 21.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.5568628, 0.6431373, 0.69411767, 1)
+
+[node name="Facade" type="CanvasLayer" parent="."]
+layer = 1
+script = ExtResource("1_facade")

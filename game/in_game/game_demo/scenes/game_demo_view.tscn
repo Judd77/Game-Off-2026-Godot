@@ -1,0 +1,85 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/in_game/game_demo/scripts/game_demo_component.gd" id="1_igtik"]
+[ext_resource type="Theme" path="res://game/shared/themes/demo_text_theme.tres" id="2_theme"]
+
+[sub_resource type="Environment" id="Environment_s6hmn"]
+background_mode = 1
+background_color = Color(0.13725491, 0.19607843, 0.28235295, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_234gp"]
+albedo_color = Color(0.40392157, 0.4862745, 0.5529412, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ed73"]
+size = Vector3(6.6, 0.36, 4.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3ker"]
+albedo_color = Color(0.16862746, 0.54901963, 0.6666667, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ga6k7"]
+size = Vector3(1.55, 1.55, 1.55)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecdch"]
+albedo_color = Color(0.93333334, 0.6156863, 0.2627451, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_e5tvk"]
+radius = 0.8
+height = 1.6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7srjm"]
+bg_color = Color(0.15686275, 0.22745098, 0.3137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2h5hy"]
+bg_color = Color(0.13490197, 0.19560784, 0.26980394, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2dny"]
+bg_color = Color(0.24117649, 0.3047059, 0.38235295, 1)
+
+[node name="GameDemoView" type="Node3D" unique_id=1969247336]
+script = ExtResource("1_igtik")
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=1365337578]
+environment = SubResource("Environment_s6hmn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611784972]
+transform = Transform3D(0.8910065, 0.37188724, -0.26039824, 0, 0.57357645, 0.81915206, 0.4539905, -0.72986984, 0.51106036, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1860838429]
+transform = Transform3D(0.8137099, -0.24565582, 0.5268106, 0, 0.90630776, 0.42261827, -0.5812712, -0.34388867, 0.7374716, 5, 4.2, 7)
+projection = 1
+current = true
+size = 5.7
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1377690353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18, 0)
+material_override = SubResource("StandardMaterial3D_234gp")
+mesh = SubResource("BoxMesh_7ed73")
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1257422693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33, 0.775, 0.12)
+material_override = SubResource("StandardMaterial3D_p3ker")
+mesh = SubResource("BoxMesh_ga6k7")
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=1381015785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38, 0.8, 0.17)
+material_override = SubResource("StandardMaterial3D_ecdch")
+mesh = SubResource("SphereMesh_e5tvk")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1009990391]
+layer = 0
+
+[node name="ExitButton" type="Button" parent="HUD" unique_id=1388541119]
+theme = ExtResource("2_theme")
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 92.0
+offset_bottom = 52.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_7srjm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2h5hy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p2dny")
+theme_override_font_sizes/font_size = 18
+text = "退出"
